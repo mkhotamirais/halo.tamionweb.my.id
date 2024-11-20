@@ -53,7 +53,7 @@ export function HeroLeft() {
         animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
         className="prose"
       >
-        <h1 className="font-barlowCondensed">I am Mkhotami, a Web Developer</h1>
+        <h1 className="mb-0">I am Mkhotami, a Web Developer</h1>
         <p>I Built dynamic, responsive web applications and created seamless user experiences with efficient code.</p>
       </motion.div>
       <motion.div
