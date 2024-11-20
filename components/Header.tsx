@@ -21,7 +21,7 @@ export function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: scrollDirection === "up" ? "-100%" : 0, transition: { duration: 0.3 } }}
-      className="flex z-40 absolute h-20 w-full items-center justify-center top-0"
+      className="flex z-40 relative h-20 w-full items-center justify-center top-0"
     >
       <motion.div initial={{ y: 0 }} className="absolute shadow-md rounded-full overflow-hidden">
         <div className="hidden sm:flex items-center gap-1 p-1 bg-background z-50">
