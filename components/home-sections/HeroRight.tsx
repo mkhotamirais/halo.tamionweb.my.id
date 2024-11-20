@@ -9,7 +9,7 @@ import Link from "next/link";
 export function HeroRight() {
   return (
     <div id="projects" className="flex flex-col justify-between gap-4">
-      <div className="prose">
+      <div className="prose min-w-full">
         <motion.h1
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { delay: 0.9 } }}

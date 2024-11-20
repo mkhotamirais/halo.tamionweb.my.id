@@ -37,6 +37,7 @@ export function HeroLeft() {
               height={100}
               alt="mkhotami github profile foto"
               className="size-24 rounded-full shadow"
+              quality={70}
             />
           </motion.figure>
           <motion.span

@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  @apply scroll-smooth ease-in-out;
+  @apply scroll-smooth;
 }
 
 #nav-bottom .menu::-webkit-scrollbar {
