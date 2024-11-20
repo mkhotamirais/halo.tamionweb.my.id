@@ -18,14 +18,17 @@ export default function Projects() {
 
   const filteredProjects = projects
     .filter((item) => item.title.toLowerCase().includes(cari.toLowerCase()))
-    .filter((item) => selectedBadge.every((badge) => item.tools.includes(badge)));
+    .map((item) => ({ ...item, tools: item.tools.map((tool) => tool.toLowerCase()) }))
+    .filter((item) => selectedBadge.every((badge) => item.tools.includes(badge.toLowerCase())));
 
   const onBadge = (e: MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const badge: string = target?.innerText;
     if (selectedBadge.includes(badge)) {
-      setSelectedBadge((prev) => prev.filter((p) => p !== badge));
-    } else setSelectedBadge((prev) => [...prev, badge]);
+      setSelectedBadge((prev) => prev.filter((p) => p.toLowerCase() !== badge));
+    } else {
+      setSelectedBadge((prev) => [...prev, badge]);
+    }
   };
 
   return (
@@ -49,7 +52,8 @@ export default function Projects() {
                   ?.sort((a, b) => a.localeCompare(b))
                   .map((item, i) => (
                     <Badge
-                      variant={selectedBadge.includes(item) ? "secondary" : "default"}
+                      // variant={selectedBadge.includes(item) ? "secondary" : "default"}
+                      variant={selectedBadge.includes(item.toLowerCase()) ? "secondary" : "default"}
                       key={i}
                       className="cursor-pointer lowercase"
                       onClick={onBadge}
